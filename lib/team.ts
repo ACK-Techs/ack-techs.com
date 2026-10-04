@@ -15,7 +15,7 @@ export type TeamMember = {
 export const founder = {
   name: 'Ali Çağlar Koçer',
   role: 'Founder · Product & AI Systems Architect',
-  photo: 'ali-caglar-kocer.png',
+  photo: 'ali-caglar-kocer-ofis.jpg',
   linkedin: 'https://www.linkedin.com/in/ali-caglar-kocer/',
   github: 'https://github.com/caglarkc',
   email: 'alicaglarkocer@gmail.com',
@@ -25,9 +25,24 @@ export const founder = {
   ],
   companies: ['Weller Precision Industries', 'ICEBERG', 'VIRTUS ARGE', 'Gamer Arena'],
   projects: [
-    { name: 'Robotutor / OLMS', description: 'Kalıcı hafıza ve kanıta dayalı öğrenme mimarisi.', github: 'https://github.com/Weller-Precision-Industries/OLMS-V2', private: true },
-    { name: 'Archon', description: 'Devam ettirilebilir çok ajanlı geliştirme akışları.', github: 'https://github.com/caglarkc/caglarkc-agent', private: false },
-    { name: 'Immense', description: 'Go / Node.js mikroservisleri ve üretim altyapısı.', github: 'https://github.com/caglarkc/immense', private: false },
+    {
+      name: 'Robotutor / OLMS',
+      description: 'Öğrencinin neyi bildiğini, nerede zorlandığını ve nasıl ilerlediğini takip eden kişisel AI öğretmeni. Öğrenme eksiklerine göre anlatım, alıştırma ve tekrarları uyarlayarak herkese aynı içeriği sunmak yerine kişiye özel bir öğrenme yolu oluşturur.',
+      github: 'https://github.com/Weller-Precision-Industries/OLMS-V2',
+      private: true,
+    },
+    {
+      name: 'Archon',
+      description: 'Bilgisayarı bir AI ajan orkestratörüne dönüştüren sistem. Farklı büyük dil modellerini (LLM) ve ajanları aynı hedef için koordineli çalıştırır; karmaşık işleri aralarında paylaştırır, süreci yönetir ve yarım kalan çalışmaları kaldığı yerden sürdürür.',
+      github: 'https://github.com/caglarkc/caglarkc-agent',
+      private: false,
+    },
+    {
+      name: 'Immense',
+      description: 'Koçları ve öğrencileri bir araya getiren fitness ve sosyal medya ekosistemi. Beslenme ve antrenman planlarını, gelişim takibini ve koç–öğrenci iletişimini tek yerde toplar; dağınık araçlar yerine hedeflere ulaşmayı düzenli ve takip edilebilir hâle getirir.',
+      github: 'https://github.com/caglarkc/immense',
+      private: false,
+    },
   ],
 };
 

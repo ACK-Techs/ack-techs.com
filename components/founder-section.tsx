@@ -12,8 +12,8 @@ export function FounderSection() {
             <img
               src={ackPath(`/profile-photos/${founder.photo}`)}
               alt={founder.name}
-              width={320}
-              height={320}
+              width={1122}
+              height={1069}
               loading="lazy"
             />
             <div className="founder-contact">
@@ -40,7 +40,7 @@ export function FounderSection() {
             </div>
           </div>
         </div>
-        <ul className="founder-projects" aria-label="Seçilmiş mimari çalışmaları">
+        <ul className="founder-projects" aria-label="Seçilmiş ürünler">
           {founder.projects.map((project) => (
             <li key={project.name}>
               <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`${project.name} GitHub deposu${project.private ? ' (özel depo)' : ''} (yeni sekme)`}>
