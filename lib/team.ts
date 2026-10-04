@@ -11,24 +11,27 @@ export type TeamMember = {
   photo: string;
 };
 
+// Founder copy is based on Ali's CV and public LinkedIn profile (October 2026).
+export const founder = {
+  name: 'Ali Çağlar Koçer',
+  role: 'Founder · Product & AI Systems Architect',
+  photo: 'ali-caglar-kocer.png',
+  linkedin: 'https://www.linkedin.com/in/ali-caglar-kocer/',
+  github: 'https://github.com/caglarkc',
+  email: 'alicaglarkocer@gmail.com',
+  bio: [
+    'Dağıtık backend sistemlerinden kalıcı hafızalı AI ajanlarına; karmaşık problemleri güvenilir, ölçeklenebilir ürünlere dönüştürüyor. ABD, Birleşik Krallık ve Türkiye’deki ekiplerle üretim sistemleri geliştirdi.',
+    'ACK Techs’te ürün vizyonunu, sistem mimarisini ve teknik yönü bir araya getiriyor. FIRST / STEP / INTO / PATH ile genç yeteneklerin gerçek projelerde üretip deneyim kazanabileceği bir ekosistem kuruyor.',
+  ],
+  companies: ['Weller Precision Industries', 'ICEBERG', 'VIRTUS ARGE', 'Gamer Arena'],
+  projects: [
+    { name: 'Robotutor / OLMS', description: 'Kalıcı hafıza ve kanıta dayalı öğrenme mimarisi.', github: 'https://github.com/Weller-Precision-Industries/OLMS-V2', private: true },
+    { name: 'Archon', description: 'Devam ettirilebilir çok ajanlı geliştirme akışları.', github: 'https://github.com/caglarkc/caglarkc-agent', private: false },
+    { name: 'Immense', description: 'Go / Node.js mikroservisleri ve üretim altyapısı.', github: 'https://github.com/caglarkc/immense', private: false },
+  ],
+};
+
 export const team: TeamMember[] = [
-  {
-    "name": "Ali Çağlar Koçer",
-    "initials": "AK",
-    "role": "Founder · Backend & AI Lead",
-    "company": "ACK Techs",
-    "bio": "Local-first gözlemlenebilirlik (Sentinel, Watchtower), AI ajan sistemleri ve dağıtık mikroservis mimarileri geliştiriyor.",
-    "tags": [
-      "Python",
-      "Go",
-      "LLMOps",
-      "Observability"
-    ],
-    "color": "#c9ff45",
-    "linkedin": "https://www.linkedin.com/in/ali-caglar-kocer/",
-    "photo": "ali-caglar-kocer.png",
-    "github": "https://github.com/caglarkc"
-  },
   {
     "name": "Doğukan Taha Tıraş",
     "initials": "DT",
@@ -45,23 +48,6 @@ export const team: TeamMember[] = [
     "linkedin": "https://www.linkedin.com/in/dogukantahatiras/",
     "photo": "dogukan-taha-tiras.png",
     "github": "https://github.com/dodovlski"
-  },
-  {
-    "name": "Ayşenur Demezoğlu",
-    "initials": "AD",
-    "role": "Frontend Developer",
-    "company": "Iceberg Digital",
-    "bio": "Hızlı, erişilebilir ve karakterli arayüzler kuruyor; karmaşık ürün akışlarını sade bileşenlere indirgiyor.",
-    "tags": [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "CSS"
-    ],
-    "color": "#dcd0ff",
-    "linkedin": "https://www.linkedin.com/in/aysenurdemezoglu/",
-    "photo": "aysenur-demezoglu.jpeg",
-    "github": "https://github.com/aysenurdemezoglu"
   },
   {
     "name": "Batuhan Evleksiz",

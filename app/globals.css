@@ -440,6 +440,185 @@ a {
   font-weight:600;
   line-height:1.65
 }
+.founder-section {
+  border-inline:3px solid var(--ink);
+  border-bottom:3px solid var(--ink);
+  background:var(--paper);
+  padding:1.5rem 2rem;
+}
+.founder-label {
+  margin-bottom:1rem;
+  font-size:1.15rem;
+  font-weight:950;
+  text-transform:uppercase;
+}
+.founder-feature {
+  border:3px solid var(--ink);
+}
+.founder-main {
+  display:grid;
+  grid-template-columns:minmax(0,.32fr) minmax(0,.68fr);
+}
+.founder-portrait {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:2rem;
+  padding:2.5rem 1.75rem;
+  border-right:3px solid var(--ink);
+  background:var(--accent);
+}
+.founder-portrait img {
+  width:min(100%,384px);
+  height:auto;
+  aspect-ratio:1;
+}
+.founder-contact {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:.5rem;
+  text-align:center;
+  max-width:100%;
+}
+.founder-contact span {
+  font-size:1rem;
+  font-weight:800;
+}
+.founder-contact a {
+  font-size:clamp(.9rem,1.2vw,1.1rem);
+  font-weight:650;
+  text-decoration:underline;
+  text-underline-offset:4px;
+  overflow-wrap:anywhere;
+}
+.founder-contact a:focus-visible {
+  outline:3px solid var(--ink);
+  outline-offset:4px;
+}
+.founder-copy {
+  min-width:0;
+  padding:2.5rem;
+}
+.founder-copy h2 {
+  font-size:clamp(3rem,8.2vw,7.8rem);
+  font-weight:950;
+  letter-spacing:-.07em;
+  line-height:.86;
+}
+.founder-role {
+  margin-top:1.25rem;
+  font-size:clamp(1.1rem,2vw,1.9rem);
+  font-weight:850;
+  letter-spacing:-.025em;
+  line-height:1.35;
+}
+.founder-bio {
+  display:grid;
+  gap:1rem;
+  margin-top:1.25rem;
+  font-size:1.375rem;
+  font-weight:500;
+  line-height:1.45;
+}
+.founder-companies {
+  display:flex;
+  flex-wrap:wrap;
+  column-gap:.5rem;
+  row-gap:.25rem;
+  margin-top:1.25rem;
+  font-size:1.1rem;
+  font-weight:600;
+  line-height:1.5;
+}
+.founder-companies li:not(:last-child)::after {
+  content:' ·';
+  margin-left:.5rem;
+}
+.founder-links {
+  display:flex;
+  flex-wrap:wrap;
+  gap:1.5rem;
+  margin-top:1.25rem;
+}
+.founder-links .brutal-button {
+  min-width:200px;
+  font-size:1.3rem;
+  text-transform:none;
+}
+.founder-links .brutal-button:focus-visible {
+  outline:3px solid var(--ink);
+  outline-offset:4px;
+}
+.founder-projects {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  border-top:3px solid var(--ink);
+}
+.founder-projects li {
+  display:flex;
+}
+.founder-projects li + li {
+  border-left:3px solid var(--ink);
+}
+.founder-projects h3 {
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:.75rem;
+  font-size:clamp(1.35rem,2.65vw,2.5rem);
+  font-weight:900;
+  letter-spacing:-.04em;
+  line-height:1.2;
+}
+.founder-projects h3 svg { width:24px; height:24px; flex:none; }
+.founder-projects a {
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  padding:1.5rem 2rem;
+  transition:background-color .15s;
+}
+.founder-projects a:hover { background:var(--accent); }
+.founder-projects a:focus-visible { outline:3px solid var(--ink); outline-offset:-7px; background:var(--accent); }
+.founder-project-link { margin-top:auto; padding-top:1rem; font-size:.8rem; font-weight:750; text-decoration:underline; text-underline-offset:3px; }
+.founder-projects p {
+  margin-top:.5rem;
+  font-size:1.25rem;
+  line-height:1.5;
+}
+@media (max-width:1050px) {
+  .founder-copy { padding:2rem; }
+  .founder-bio { font-size:1.1rem; }
+  .founder-companies { font-size:.9rem; }
+  .founder-links .brutal-button { min-width:150px; font-size:.95rem; }
+  .founder-projects p { font-size:1rem; }
+  .founder-portrait { padding:2rem 1rem; }
+  .founder-projects a { padding:1.25rem; }
+  .founder-projects h3 { font-size:clamp(1.2rem,2.65vw,2rem); }
+}
+@media (max-width:720px) {
+  .founder-section { padding:1.5rem 1.25rem; }
+  .founder-main { grid-template-columns:1fr; }
+  .founder-portrait {
+    gap:1.5rem;
+    padding:2rem 1rem;
+    border-right:0;
+    border-bottom:3px solid var(--ink);
+  }
+  .founder-portrait img { width:min(100%,260px); }
+  .founder-copy { padding:1.75rem 1.25rem; }
+  .founder-copy h2 { font-size:clamp(2.65rem,12vw,5rem); }
+  .founder-bio { font-size:1rem; }
+  .founder-links { gap:1rem; }
+  .founder-links .brutal-button { min-width:0; }
+  .founder-projects { grid-template-columns:1fr; }
+  .founder-projects li + li {
+    border-left:0;
+    border-top:3px solid var(--ink);
+  }
+}
 .team-grid {
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:1.35rem;

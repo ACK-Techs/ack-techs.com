@@ -15,6 +15,7 @@ import {
 import { projects, type Accent } from '@/lib/projects';
 import { ackPath } from '@/lib/paths';
 import { team } from '@/lib/team';
+import { FounderSection } from '@/components/founder-section';
 
 const tickerItems = [
   'ÜRÜN TASARIMI',
@@ -51,6 +52,9 @@ export default function Home() {
           ACK<span>.</span>
         </a>
         <nav className="main-nav" aria-label="Ana menü">
+          <a className="nav-link" href="#kurucu">
+            Kurucu
+          </a>
           <a className="nav-link" href="#ekip">
             Ekip
           </a>
@@ -99,7 +103,7 @@ export default function Home() {
             <a className="brutal-button brutal-button--ink" href="#urunler">
               Ürünleri keşfet <ArrowDownRight aria-hidden="true" />
             </a>
-            <a className="brutal-button bg-white" href="#ekip">
+            <a className="brutal-button bg-white" href="#kurucu">
               Ekiple tanış
             </a>
           </div>
@@ -130,7 +134,7 @@ export default function Home() {
           </div>
           <div className="hero-stats">
             <div className="hero-stat">
-              <strong>{team.length}</strong>
+              <strong>{team.length + 1}</strong>
               <span>kişilik ekip</span>
             </div>
             <div className="hero-stat">
@@ -154,6 +158,8 @@ export default function Home() {
           ))}
         </div>
       </div>
+
+      <FounderSection />
 
       <section id="ekip" className="site-shell section-frame bg-paper">
         <div className="section-heading">
