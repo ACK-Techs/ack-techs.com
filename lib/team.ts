@@ -144,5 +144,52 @@ export const team: TeamMember[] = [
     "linkedin": "https://www.linkedin.com/in/aynur-oru%C3%A7o%C4%9Flu/",
     "github": "https://github.com/aynurorucoglu",
     "photo": "aynur.jpeg"
+  },
+  {
+    "name": "Bora Bal",
+    "initials": "BB",
+    "role": "UI Designer",
+    "company": "ACK Techs",
+    "bio": "Görsel iletişim tasarımı altyapısını grafik tasarım ve kurumsal kimlik çalışmalarıyla birleştiriyor. ACK Techs’te ürünlerin görsel diline ve kullanıcı arayüzlerinin tasarımına katkı sağlıyor.",
+    "tags": ["UI Design", "Visual Design", "Brand Identity"],
+    "color": "#78c7ff",
+    "linkedin": "https://www.linkedin.com/in/borabal/",
+    "github": "https://github.com/BoraB910",
+    "photo": "bora-bal.jpeg"
+  },
+  {
+    "name": "Saadet Kara",
+    "initials": "SK",
+    "role": "UI/UX · AI-Native Product Designer",
+    "company": "ACK Techs",
+    "bio": "UX stratejisi, ürün düşüncesi ve görsel tasarımı yapay zekâ odaklı iş akışlarıyla bir araya getiriyor. Kullanıcı araştırması, tasarım sistemleri ve prototipleme ile karmaşık problemleri insanı ve çevresel etkiyi gözeten sade dijital deneyimlere dönüştürüyor.",
+    "tags": ["UI/UX", "UX Research", "Prototyping", "AI-Native Design"],
+    "color": "#dcd0ff",
+    "linkedin": "https://www.linkedin.com/in/saadet-kara/",
+    "github": "https://github.com/saadetlab",
+    "photo": "saadet-kara.png"
+  },
+  {
+    "name": "Alp Şeker",
+    "initials": "AŞ",
+    "role": "UI/UX & Product Designer",
+    "company": "ACK Techs",
+    "bio": "Studio Scale ve bankacılık ürünlerindeki deneyimiyle araştırmadan arayüze ve geliştirici teslimine kadar uçtan uca ürün tasarlıyor. Tasarım sistemleri, veri yoğun ekranlar ve erişilebilirlik odaklı çalışmalarıyla karmaşık ürün akışlarını anlaşılır deneyimlere dönüştürüyor.",
+    "tags": ["UI/UX", "Product Design", "Design Systems", "Accessibility"],
+    "color": "#ffd84f",
+    "linkedin": "https://www.linkedin.com/in/alpseker/",
+    "github": "https://github.com/zeusmomo",
+    "photo": "alp-seker.jpeg"
+  },
+  {
+    "name": "Nisan Aksu",
+    "initials": "NA",
+    "role": "Marketing & Social Media",
+    "company": "ACK Techs",
+    "bio": "Gazi Üniversitesi’nde istatistik eğitimi alıyor; HUAWEI Student Developers Türkiye’de çekirdek ekip üyesi olarak topluluk çalışmalarına katılıyor. ACK Techs’in pazarlama ve sosyal medya çalışmalarına katkı sağlayarak ürünlerin hikâyesini dijital kanallarda paylaşıyor.",
+    "tags": ["Marketing", "Social Media", "Content", "Community"],
+    "color": "#ffd1b8",
+    "linkedin": "https://www.linkedin.com/in/nisanaksu/",
+    "photo": "nisan-aksu.jpeg"
   }
 ];
