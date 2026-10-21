@@ -48,37 +48,33 @@ export const founder = {
 
 export const team: TeamMember[] = [
   {
-    "name": "Doğukan Taha Tıraş",
-    "initials": "DT",
-    "role": "Co-Founder · Frontend & AI Lead",
-    "company": "Turkish Airlines",
-    "bio": "Modern React/Next.js arayüzleri, Haier Europe Datathon 4.lüğü ve Learning-to-Rank arama optimizasyonu.",
-    "tags": [
-      "Next.js",
-      "React",
-      "Data Science",
-      "Semantic Search"
-    ],
+    "name": "Alp Şeker",
+    "initials": "AŞ",
+    "role": "UI/UX & Product Designer",
+    "company": "ACK Techs",
+    "bio": "Studio Scale ve bankacılık ürünlerindeki deneyimiyle araştırmadan arayüze ve geliştirici teslimine kadar uçtan uca ürün tasarlıyor. Tasarım sistemleri, veri yoğun ekranlar ve erişilebilirlik odaklı çalışmalarıyla karmaşık ürün akışlarını anlaşılır deneyimlere dönüştürüyor.",
+    "tags": ["UI/UX", "Product Design", "Design Systems", "Accessibility"],
     "color": "#ffd84f",
-    "linkedin": "https://www.linkedin.com/in/dogukantahatiras/",
-    "photo": "dogukan-taha-tiras.png",
-    "github": "https://github.com/dodovlski"
+    "linkedin": "https://www.linkedin.com/in/alpseker/",
+    "github": "https://github.com/zeusmomo",
+    "photo": "alp-seker.jpeg"
   },
   {
-    "name": "Batuhan Evleksiz",
-    "initials": "BE",
-    "role": "Full-Stack Developer & AI",
+    "name": "Aynur Oruçoğlu",
+    "initials": "AO",
+    "role": "AI & FullStack DEVELOPER",
     "company": "ACK Techs",
-    "bio": "Modern web teknolojileriyle ölçeklenebilir ve kullanıcı odaklı ürünler geliştiriyor. Frontend ve backend süreçlerini birlikte ele alırken yapay zekâ destekli çözümleri gerçek problemlere uyguluyor.",
+    "bio": "AI algoritmaları (Python, TensorFlow, OpenCV) ve modern web teknolojileriyle uçtan uca ürün geliştiren yazılım mühendisi adayıyım. Sadece veri işlemekle veya model eğitmekle kalmıyor, tasarladığım arayüzleri güçlü arka plan sistemleriyle entegre ederek veriyi kullanıcıya doğrudan dokunan, işlevsel ve estetik projelere dönüştürüyorum.",
     "tags": [
-      "React",
-      "TypeScript",
-      "Full-Stack",
-      "AI"
+      "Python",
+      "TensorFlow",
+      "OpenCV",
+      "Full-Stack"
     ],
-    "color": "#78c7ff",
-    "linkedin": "https://www.linkedin.com/in/batuhanevleksiz/",
-    "photo": "batuhan-evleksiz.jpeg"
+    "color": "#c9ff45",
+    "linkedin": "https://www.linkedin.com/in/aynur-oru%C3%A7o%C4%9Flu/",
+    "github": "https://github.com/aynurorucoglu",
+    "photo": "aynur.jpeg"
   },
   {
     "name": "Ayselin Aydoğdu",
@@ -113,6 +109,51 @@ export const team: TeamMember[] = [
     "photo": "ayse-sena.png"
   },
   {
+    "name": "Batuhan Evleksiz",
+    "initials": "BE",
+    "role": "Full-Stack Developer & AI",
+    "company": "ACK Techs",
+    "bio": "Modern web teknolojileriyle ölçeklenebilir ve kullanıcı odaklı ürünler geliştiriyor. Frontend ve backend süreçlerini birlikte ele alırken yapay zekâ destekli çözümleri gerçek problemlere uyguluyor.",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Full-Stack",
+      "AI"
+    ],
+    "color": "#78c7ff",
+    "linkedin": "https://www.linkedin.com/in/batuhanevleksiz/",
+    "photo": "batuhan-evleksiz.jpeg"
+  },
+  {
+    "name": "Bora Bal",
+    "initials": "BB",
+    "role": "UI Designer",
+    "company": "ACK Techs",
+    "bio": "Görsel iletişim tasarımı altyapısını grafik tasarım ve kurumsal kimlik çalışmalarıyla birleştiriyor. ACK Techs’te ürünlerin görsel diline ve kullanıcı arayüzlerinin tasarımına katkı sağlıyor.",
+    "tags": ["UI Design", "Visual Design", "Brand Identity"],
+    "color": "#78c7ff",
+    "linkedin": "https://www.linkedin.com/in/borabal/",
+    "github": "https://github.com/BoraB910",
+    "photo": "bora-bal.jpeg"
+  },
+  {
+    "name": "Doğukan Taha Tıraş",
+    "initials": "DT",
+    "role": "Co-Founder · Frontend & AI Lead",
+    "company": "Turkish Airlines",
+    "bio": "Modern React/Next.js arayüzleri, Haier Europe Datathon 4.lüğü ve Learning-to-Rank arama optimizasyonu.",
+    "tags": [
+      "Next.js",
+      "React",
+      "Data Science",
+      "Semantic Search"
+    ],
+    "color": "#ffd84f",
+    "linkedin": "https://www.linkedin.com/in/dogukantahatiras/",
+    "photo": "dogukan-taha-tiras.png",
+    "github": "https://github.com/dodovlski"
+  },
+  {
     "name": "Mehmet Yıldız",
     "initials": "MY",
     "role": "AI Engineer",
@@ -129,33 +170,15 @@ export const team: TeamMember[] = [
     "photo": "mehmet-yildiz.png"
   },
   {
-    "name": "Aynur Oruçoğlu",
-    "initials": "AO",
-    "role": "AI & FullStack DEVELOPER",
+    "name": "Nisan Aksu",
+    "initials": "NA",
+    "role": "Marketing & Social Media",
     "company": "ACK Techs",
-    "bio": "AI algoritmaları (Python, TensorFlow, OpenCV) ve modern web teknolojileriyle uçtan uca ürün geliştiren yazılım mühendisi adayıyım. Sadece veri işlemekle veya model eğitmekle kalmıyor, tasarladığım arayüzleri güçlü arka plan sistemleriyle entegre ederek veriyi kullanıcıya doğrudan dokunan, işlevsel ve estetik projelere dönüştürüyorum.",
-    "tags": [
-      "Python",
-      "TensorFlow",
-      "OpenCV",
-      "Full-Stack"
-    ],
-    "color": "#c9ff45",
-    "linkedin": "https://www.linkedin.com/in/aynur-oru%C3%A7o%C4%9Flu/",
-    "github": "https://github.com/aynurorucoglu",
-    "photo": "aynur.jpeg"
-  },
-  {
-    "name": "Bora Bal",
-    "initials": "BB",
-    "role": "UI Designer",
-    "company": "ACK Techs",
-    "bio": "Görsel iletişim tasarımı altyapısını grafik tasarım ve kurumsal kimlik çalışmalarıyla birleştiriyor. ACK Techs’te ürünlerin görsel diline ve kullanıcı arayüzlerinin tasarımına katkı sağlıyor.",
-    "tags": ["UI Design", "Visual Design", "Brand Identity"],
-    "color": "#78c7ff",
-    "linkedin": "https://www.linkedin.com/in/borabal/",
-    "github": "https://github.com/BoraB910",
-    "photo": "bora-bal.jpeg"
+    "bio": "Gazi Üniversitesi’nde istatistik eğitimi alıyor; HUAWEI Student Developers Türkiye’de çekirdek ekip üyesi olarak topluluk çalışmalarına katılıyor. ACK Techs’in pazarlama ve sosyal medya çalışmalarını yöneterek ürünlerin hikâyesini dijital kanallarda paylaşıyor.",
+    "tags": ["Marketing", "Social Media", "Content", "Community"],
+    "color": "#ffd1b8",
+    "linkedin": "https://www.linkedin.com/in/nisanaksu/",
+    "photo": "nisan-aksu.jpeg"
   },
   {
     "name": "Saadet Kara",
@@ -168,28 +191,5 @@ export const team: TeamMember[] = [
     "linkedin": "https://www.linkedin.com/in/saadet-kara/",
     "github": "https://github.com/saadetlab",
     "photo": "saadet-kara.png"
-  },
-  {
-    "name": "Alp Şeker",
-    "initials": "AŞ",
-    "role": "UI/UX & Product Designer",
-    "company": "ACK Techs",
-    "bio": "Studio Scale ve bankacılık ürünlerindeki deneyimiyle araştırmadan arayüze ve geliştirici teslimine kadar uçtan uca ürün tasarlıyor. Tasarım sistemleri, veri yoğun ekranlar ve erişilebilirlik odaklı çalışmalarıyla karmaşık ürün akışlarını anlaşılır deneyimlere dönüştürüyor.",
-    "tags": ["UI/UX", "Product Design", "Design Systems", "Accessibility"],
-    "color": "#ffd84f",
-    "linkedin": "https://www.linkedin.com/in/alpseker/",
-    "github": "https://github.com/zeusmomo",
-    "photo": "alp-seker.jpeg"
-  },
-  {
-    "name": "Nisan Aksu",
-    "initials": "NA",
-    "role": "Marketing & Social Media",
-    "company": "ACK Techs",
-    "bio": "Gazi Üniversitesi’nde istatistik eğitimi alıyor; HUAWEI Student Developers Türkiye’de çekirdek ekip üyesi olarak topluluk çalışmalarına katılıyor. ACK Techs’in pazarlama ve sosyal medya çalışmalarına katkı sağlayarak ürünlerin hikâyesini dijital kanallarda paylaşıyor.",
-    "tags": ["Marketing", "Social Media", "Content", "Community"],
-    "color": "#ffd1b8",
-    "linkedin": "https://www.linkedin.com/in/nisanaksu/",
-    "photo": "nisan-aksu.jpeg"
   }
 ];
