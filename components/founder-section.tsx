@@ -4,10 +4,9 @@ import { founder } from '@/lib/team';
 
 export function FounderSection() {
   return (
-    <section id="kurucu" className="site-shell founder-section" aria-labelledby="founder-name">
-      <p className="founder-label">Kurucu</p>
-      <div className="founder-feature">
-        <div className="founder-main">
+    <section id="kurucu" className="section container" aria-labelledby="founder-name">
+      <div className="card founder-feature" data-spotlight data-reveal>
+        <div className="founder-card">
           <div className="founder-portrait">
             <img
               src={ackPath(`/profile-photos/${founder.photo}`)}
@@ -22,19 +21,22 @@ export function FounderSection() {
             </div>
           </div>
           <div className="founder-copy">
-            <h2 id="founder-name">Ali Çağlar<br />Koçer</h2>
+            <span className="eyebrow eyebrow--brand"><i /> Kurucu</span>
+            <h2 id="founder-name" className="gradient-text">Ali Çağlar<br />Koçer</h2>
             <p className="founder-role">{founder.role}</p>
             <div className="founder-bio">
               {founder.bio.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
             <ul className="founder-companies" aria-label="Profesyonel deneyim">
-              {founder.companies.map((company) => <li key={company}>{company}</li>)}
+              {founder.companies.map((company) => (
+                <li className="pill" key={company}>{company}</li>
+              ))}
             </ul>
             <div className="founder-links">
-              <a className="brutal-button bg-accent" href={founder.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Ali Çağlar Koçer LinkedIn profili (yeni sekme)">
+              <a className="btn btn--primary" href={founder.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Ali Çağlar Koçer LinkedIn profili (yeni sekme)">
                 LinkedIn <ArrowUpRight aria-hidden="true" />
               </a>
-              <a className="brutal-button bg-yellow" href={founder.github} target="_blank" rel="noopener noreferrer" aria-label="Ali Çağlar Koçer GitHub profili (yeni sekme)">
+              <a className="btn" href={founder.github} target="_blank" rel="noopener noreferrer" aria-label="Ali Çağlar Koçer GitHub profili (yeni sekme)">
                 GitHub <ArrowUpRight aria-hidden="true" />
               </a>
             </div>
