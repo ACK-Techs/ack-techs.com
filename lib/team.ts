@@ -134,7 +134,7 @@ export const team: TeamMember[] = [
     "color": "#78c7ff",
     "linkedin": "https://www.linkedin.com/in/borabal/",
     "github": "https://github.com/BoraB910",
-    "photo": "bora-bal.jpeg"
+    "photo": "bora-bal-clean.jpeg"
   },
   {
     "name": "Doğukan Taha Tıraş",
@@ -178,7 +178,7 @@ export const team: TeamMember[] = [
     "tags": ["Marketing", "Social Media", "Content", "Community"],
     "color": "#ffd1b8",
     "linkedin": "https://www.linkedin.com/in/nisanaksu/",
-    "photo": "nisan-aksu.jpeg"
+    "photo": "nisan-aksu-clean.jpeg"
   },
   {
     "name": "Saadet Kara",
