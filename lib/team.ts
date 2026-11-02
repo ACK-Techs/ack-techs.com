@@ -48,18 +48,6 @@ export const founder = {
 
 export const team: TeamMember[] = [
   {
-    "name": "Alp Şeker",
-    "initials": "AŞ",
-    "role": "UI/UX & Product Designer",
-    "company": "ACK Techs",
-    "bio": "Studio Scale ve bankacılık ürünlerindeki deneyimiyle araştırmadan arayüze ve geliştirici teslimine kadar uçtan uca ürün tasarlıyor. Tasarım sistemleri, veri yoğun ekranlar ve erişilebilirlik odaklı çalışmalarıyla karmaşık ürün akışlarını anlaşılır deneyimlere dönüştürüyor.",
-    "tags": ["UI/UX", "Product Design", "Design Systems", "Accessibility"],
-    "color": "#ffd84f",
-    "linkedin": "https://www.linkedin.com/in/alpseker/",
-    "github": "https://github.com/zeusmomo",
-    "photo": "alp-seker.jpeg"
-  },
-  {
     "name": "Aynur Oruçoğlu",
     "initials": "AO",
     "role": "AI & FullStack DEVELOPER",
@@ -152,22 +140,6 @@ export const team: TeamMember[] = [
     "linkedin": "https://www.linkedin.com/in/dogukantahatiras/",
     "photo": "dogukan-taha-tiras.png",
     "github": "https://github.com/dodovlski"
-  },
-  {
-    "name": "Mehmet Yıldız",
-    "initials": "MY",
-    "role": "AI Engineer",
-    "company": "ACK Techs",
-    "bio": "Python, veri mühendisliği ve backend temelli bir AI engineer. Modelleri gerçek sistemlere bağlayan katmanı kuruyor; veri boru hatlarından ürün içi yapay zekâ akışlarına kadar uçtan uca düşünüyor.",
-    "tags": [
-      "Python",
-      "SQL",
-      "Data Eng",
-      "ML"
-    ],
-    "color": "#ffd1b8",
-    "linkedin": "https://www.linkedin.com/in/mehmetyildizbst/",
-    "photo": "mehmet-yildiz.png"
   },
   {
     "name": "Nisan Aksu",
