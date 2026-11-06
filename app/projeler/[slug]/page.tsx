@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 
 import { BlockView } from '@/components/rich-text';
 import { ackPath } from '@/lib/paths';
-import { LogoMark } from '@/components/logo';
+import { LogoLockup } from '@/components/logo';
 import { Motion } from '@/components/motion';
 import { getProject, projects } from '@/lib/projects';
 
@@ -62,8 +62,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <header className="site-header" aria-label="Site üst menüsü">
         <div className="container site-header-inner">
           <a href={ackPath('/')} className="brand-mark" aria-label="ACK Techs ana sayfa">
-            <LogoMark />
-            ACK <span>Techs</span>
+            <LogoLockup height={30} />
           </a>
 
           <nav className="main-nav" aria-label="Ana menü">
@@ -164,8 +163,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <div className="container footer-grid">
           <div>
             <a href="#top" className="footer-logo" aria-label="Sayfanın başına dön">
-              <LogoMark size={30} />
-              ACK Techs
+              <LogoLockup height={40} />
             </a>
           </div>
           <div className="footer-contact">

@@ -13,7 +13,7 @@ import { projects, type Accent } from '@/lib/projects';
 import { ackPath } from '@/lib/paths';
 import { team } from '@/lib/team';
 import { FounderSection } from '@/components/founder-section';
-import { LogoMark } from '@/components/logo';
+import { LogoLockup } from '@/components/logo';
 import { Motion } from '@/components/motion';
 
 const tickerItems = [
@@ -51,8 +51,7 @@ export default function Home() {
       <header className="site-header" aria-label="Site üst menüsü">
         <div className="container site-header-inner">
           <a href="#top" className="brand-mark" aria-label="ACK Techs ana sayfa">
-            <LogoMark />
-            ACK <span>Techs</span>
+            <LogoLockup height={30} />
           </a>
           <nav className="main-nav" aria-label="Ana menü">
             <a className="nav-link" href="#kurucu">Kurucu</a>
@@ -68,7 +67,10 @@ export default function Home() {
       </header>
 
       <section className="hero">
-        <div className="container">
+        <div className="hero-banner" aria-hidden="true">
+          <img src={ackPath('/brand/ack-techs-cover.jpg')} alt="" width={1920} height={325} />
+        </div>
+        <div className="container hero-content">
           <span className="hero-badge" data-reveal>
             <b>İstanbul · 2026</b> Bağımsız ürün ve teknoloji ekibi
           </span>
@@ -385,8 +387,7 @@ export default function Home() {
         <div className="container footer-grid">
           <div>
             <a href="#top" className="footer-logo" aria-label="Sayfanın başına dön">
-              <LogoMark size={30} />
-              ACK Techs
+              <LogoLockup height={40} />
             </a>
             <p>Fikirden çalışan ürüne.</p>
           </div>
