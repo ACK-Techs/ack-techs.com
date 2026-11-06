@@ -4,8 +4,6 @@ import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 
 import { BlockView } from '@/components/rich-text';
 import { ackPath } from '@/lib/paths';
-import { LogoLockup } from '@/components/logo';
-import { Motion } from '@/components/motion';
 import { getProject, projects } from '@/lib/projects';
 
 type ProjectPageProps = {
@@ -56,31 +54,27 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const next = index < projects.length - 1 ? projects[index + 1] : projects[0];
 
   return (
-    <main id="top">
-      <Motion />
-
+    <main id="top" className="page-shell">
       <header className="site-header" aria-label="Site üst menüsü">
-        <div className="container site-header-inner">
-          <a href={ackPath('/')} className="brand-mark" aria-label="ACK Techs ana sayfa">
-            <LogoLockup height={30} />
+        <a href={ackPath('/')} className="brand-mark" aria-label="ACK Techs ana sayfa">
+          ACK<span>.</span>
+        </a>
+
+        <nav className="main-nav" aria-label="Ana menü">
+          <a className="nav-link" href={ackPath('/#urunler')}>
+            Ürünler
           </a>
+          <a className="nav-link" href={ackPath('/#ekip')}>
+            Ekip
+          </a>
+        </nav>
 
-          <nav className="main-nav" aria-label="Ana menü">
-            <a className="nav-link" href={ackPath('/#urunler')}>
-              Ürünler
-            </a>
-            <a className="nav-link" href={ackPath('/#ekip')}>
-              Ekip
-            </a>
-          </nav>
-
-          <span className="pill">{project.status}</span>
-        </div>
+        <span className="eyebrow">{project.status}</span>
       </header>
 
-      <article className="container project-detail">
+      <article className="project-detail">
         <section
-          className={`card project-hero tone-${project.accent}`}
+          className={`project-hero tone-${project.accent}`}
           aria-labelledby="project-title"
         >
           <div className="project-hero-topline">
@@ -112,7 +106,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           ))}
         </div>
 
-        <div className="project-body-grid">
+        <div className="project-body">
           {project.sections.length > 1 && (
             <nav className="project-toc" aria-label="Bu sayfada">
               <span className="project-toc-label">Bu sayfada</span>
@@ -146,12 +140,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </div>
 
         <nav className="project-pager" aria-label="Diğer projeler">
-          <a className={`card pager-card tone-${previous.accent}`} href={ackPath(`/projeler/${previous.slug}/`)}>
+          <a className={`pager-card tone-${previous.accent}`} href={ackPath(`/projeler/${previous.slug}/`)}>
             <span className="pager-label">Önceki</span>
             <strong>{previous.name}</strong>
             <span className="pager-type">{previous.type}</span>
           </a>
-          <a className={`card pager-card tone-${next.accent}`} href={ackPath(`/projeler/${next.slug}/`)}>
+          <a className={`pager-card tone-${next.accent}`} href={ackPath(`/projeler/${next.slug}/`)}>
             <span className="pager-label">Sonraki</span>
             <strong>{next.name}</strong>
             <span className="pager-type">{next.type}</span>
@@ -160,21 +154,19 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       </article>
 
       <footer className="site-footer">
-        <div className="container footer-grid">
-          <div>
-            <a href="#top" className="footer-logo" aria-label="Sayfanın başına dön">
-              <LogoLockup height={40} />
-            </a>
-          </div>
-          <div className="footer-contact">
-            <a href="mailto:ack.techs0@gmail.com">
-              ack.techs0@gmail.com <ArrowUpRight aria-hidden="true" />
-            </a>
-          </div>
-          <div className="footer-meta">
-            <span>© 2026 ACK TECHS</span>
-            <a href={ackPath('/#urunler')}>ÜRÜNLERE DÖN ↑</a>
-          </div>
+        <div>
+          <a href="#top" className="footer-logo" aria-label="Sayfanın başına dön">
+            ACK<span>.</span>
+          </a>
+        </div>
+        <div className="footer-contact">
+          <a href="mailto:ack.techs0@gmail.com">
+            ack.techs0@gmail.com <ArrowUpRight aria-hidden="true" />
+          </a>
+        </div>
+        <div className="footer-meta">
+          <span>© 2026 ACK TECHS</span>
+          <a href={ackPath('/#urunler')}>ÜRÜNLERE DÖN ↑</a>
         </div>
       </footer>
     </main>
