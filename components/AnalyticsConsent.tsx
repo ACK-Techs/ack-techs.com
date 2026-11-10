@@ -29,7 +29,7 @@ export default function AnalyticsConsent() {
     if (!initialized.current) {
       initialized.current = true;
       window.dataLayer = window.dataLayer || [];
-      window.gtag = function (...args: unknown[]) { window.dataLayer.push(args); };
+      window.gtag = function () { window.dataLayer.push(arguments); };
       window.gtag('js', new Date());
       window.gtag('config', ID, { allow_google_signals: false, page_location: window.location.origin + window.location.pathname });
       const script = document.createElement('script');
