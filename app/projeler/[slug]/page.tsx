@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 
@@ -30,14 +31,25 @@ export async function generateMetadata(
     return { title: 'Proje bulunamadı — ACK Techs' };
   }
 
+  const url = ackPath(`/projeler/${project.slug}/`);
   return {
     title: `${project.name} — ACK Techs`,
     description: project.cardDescription,
+    alternates: { canonical: url },
     openGraph: {
       title: `${project.name} — ACK Techs`,
       description: project.cardDescription,
+      url,
       type: 'article',
       locale: 'tr_TR',
+      ...(project.preview && {
+        images: [{
+          url: project.preview.src,
+          alt: project.preview.alt,
+          width: project.preview.width,
+          height: project.preview.height,
+        }],
+      }),
     },
   };
 }
@@ -112,6 +124,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <p key={paragraphIndex}>{paragraph}</p>
           ))}
         </div>
+
+        {project.preview && (
+          <figure className="project-preview">
+            <Image {...project.preview} unoptimized />
+          </figure>
+        )}
 
         <div className="project-body-grid">
           {project.sections.length > 1 && (

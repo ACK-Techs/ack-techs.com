@@ -37,7 +37,7 @@ const productHighlights: Record<string, { value: string; label: string }> = {
   'ev-karnesi': { value: 'Karar', label: 'Evinizi tanıyarak seçin' },
   demandrift: { value: 'Keşif', label: 'Fikrinizin potansiyelini görün' },
   steward: { value: 'Destek', label: 'İşinize odaklanın' },
-  'sentinel-coming': { value: 'Gözlem', label: 'Sistemlerinizi anlayın' },
+  cluesight: { value: 'Gözlem', label: 'Sistemlerinizi anlayın' },
   'first-step-into-path': { value: 'Deneyim', label: 'İlk adımınızı atın' },
 };
 

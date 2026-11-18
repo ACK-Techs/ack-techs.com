@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/projeler/sentinel-coming/",
+      "destination": "/projeler/cluesight/",
+      "permanent": true
+    },
+    {
+      "source": "/projeler/sentinel-coming",
+      "destination": "/projeler/cluesight/",
+      "permanent": true
+    }
+  ]
+}

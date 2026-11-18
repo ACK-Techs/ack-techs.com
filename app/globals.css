@@ -1434,6 +1434,18 @@ img {
   margin-bottom: 0;
 }
 
+.project-preview {
+  margin: clamp(2rem, 4vw, 3rem) 0 0;
+}
+
+.project-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+}
+
 .project-body-grid {
   display: grid;
   align-items: start;

@@ -29,6 +29,7 @@ export type Project = {
   accent: Accent;
   cardDescription: string;
   cardClassName: string;
+  preview?: { src: string; alt: string; width: number; height: number };
   tags: string[];
   lead: string[];
   sections: Section[];
@@ -356,18 +357,24 @@ SOAK_HOURS=24 ./scripts/soak_24h.sh`,
   },
 
   {
-    slug: 'sentinel-coming',
-    name: 'Sentinel',
+    slug: 'cluesight',
+    name: 'ClueSight',
     type: 'Gözlemlenebilirlik CLI’ı',
     status: 'Geliştiriliyor',
     accent: 'blue',
     cardClassName: 'project-card',
+    preview: {
+      src: '/projects/cluesight/overview.png',
+      alt: 'ClueSight arayüz konsepti: servis topolojisi, metrikler ve olay kanıtları',
+      width: 1672,
+      height: 941,
+    },
     cardDescription:
       'Metrik, log ve trace’i tek terminal akışında toplayan ajan tabanlı CLI ve salt-okunur gözlemlenebilirlik ağ geçidi.',
     tags: ['Python', 'FastAPI', 'Kubernetes', 'OpenTelemetry'],
     lead: [
-      'Sentinel; ajan tabanlı bir Python CLI’ı, salt-okunur bir gözlemlenebilirlik ağ geçidi ve gerçekçi bir çok servisli test platformu etrafında kurulmuş, portföy düzeyinde bir gözlemlenebilirlik ve altyapı otomasyonu projesidir. Operatörlerin metrik, log, trace, yapılandırma ve dağıtım durumunu tek bir terminal akışından daha güvenli biçimde incelemesi gereken yerel laboratuvarlar ve Kubernetes/COS tarzı ortamlar için tasarlanmıştır.',
-      'Ürünün çekirdeği `sentinel-cli`’dır: tek seferlik istemler çalıştırabilen, REPL başlatabilen, yapılandırmayı inceleyebilen, health check yapabilen, yerel gözlemlenebilirlik yığınları kurabilen ve ağ geçidi destekli bir telemetri katmanını sorgulayabilen bir Python komut satırı asistanı. Ağ geçidi; Prometheus, Loki ve Tempo erişimini tek bir salt-okunur HTTP API’si arkasında tutar, böylece CLI her arka uç URL’ini doğrudan bilmek zorunda kalmaz.',
+      'ClueSight; ajan tabanlı bir Python CLI’ı, salt-okunur bir gözlemlenebilirlik ağ geçidi ve gerçekçi bir çok servisli test platformu etrafında kurulmuş, portföy düzeyinde bir gözlemlenebilirlik ve altyapı otomasyonu projesidir. Operatörlerin metrik, log, trace, yapılandırma ve dağıtım durumunu tek bir terminal akışından daha güvenli biçimde incelemesi gereken yerel laboratuvarlar ve Kubernetes/COS tarzı ortamlar için tasarlanmıştır.',
+      'Ürünün çekirdeği ClueSight CLI’dır: tek seferlik istemler çalıştırabilen, REPL başlatabilen, yapılandırmayı inceleyebilen, health check yapabilen, yerel gözlemlenebilirlik yığınları kurabilen ve ağ geçidi destekli bir telemetri katmanını sorgulayabilen bir Python komut satırı asistanı. Ağ geçidi; Prometheus, Loki ve Tempo erişimini tek bir salt-okunur HTTP API’si arkasında tutar, böylece CLI her arka uç URL’ini doğrudan bilmek zorunda kalmaz.',
     ],
     sections: [
       {
@@ -408,7 +415,7 @@ SOAK_HOURS=24 ./scripts/soak_24h.sh`,
               'Oturum kalıcılığı, trajectory kaydı, bağlam penceresi politikası ve isteğe bağlı tur sonu bellek işleme.',
               'Prometheus metrikleri, Loki log sorguları ve Tempo trace arama/detay çağrıları için salt-okunur FastAPI gözlemlenebilirlik ağ geçidi.',
               'Ağ geçidi destekli CLI gözlemlenebilirlik komutları: `obs metric`, `obs logs` ve `obs traces`.',
-              'Sentinel gözlemlenebilirlik yığını için Docker Compose kurulum varlıkları ve Kubernetes Helm chart varlıkları.',
+              'ClueSight gözlemlenebilirlik yığını için Docker Compose kurulum varlıkları ve Kubernetes Helm chart varlıkları.',
               'Gateway, orders, payments, inventory, worker servisleri; Postgres, Redis, OpenTelemetry Collector, Locust yük senaryoları, kaos profilleri ve Kubernetes manifest’leri içeren test platformu.',
               'GitHub Actions, Ruff ve Pytest kullanan CLI paketi CI’ı.',
               'Çok mimarili GHCR derlemeleri için ağ geçidi imaj iş akışı.',
@@ -425,7 +432,7 @@ SOAK_HOURS=24 ./scripts/soak_24h.sh`,
             code: `User
   |
   v
-sentinel-cli
+ClueSight CLI
   |-- LLM provider adapters
   |-- tool registry: bash, filesystem, MCP, observability tools
   |-- session, trajectory, hooks, memory, and config layers
@@ -446,9 +453,9 @@ Target platform and observability backends`,
           {
             kind: 'list',
             items: [
-              '`for-download/compose/` Prometheus, Loki, Tempo, Grafana ve Sentinel gateway imajını içeren bir Docker Compose gözlemlenebilirlik yığını barındırır.',
-              '`charts/sentinel/` mevcut bir Kubernetes kümesine kube-prometheus-stack, Loki, Tempo, Grafana ve sentinel-gateway kuran bir Helm chart içerir.',
-              '`test-platform/` Sentinel iş akışı için metrik, log ve trace üretmekte kullanılan gerçekçi bir hedef uygulama ağacı içerir.',
+              '`for-download/compose/` Prometheus, Loki, Tempo, Grafana ve ClueSight gateway imajını içeren bir Docker Compose gözlemlenebilirlik yığını barındırır.',
+              '`charts/` mevcut bir Kubernetes kümesine kube-prometheus-stack, Loki, Tempo, Grafana ve gözlemlenebilirlik ağ geçidini kuran Helm varlıklarını içerir.',
+              '`test-platform/` ClueSight iş akışı için metrik, log ve trace üretmekte kullanılan gerçekçi bir hedef uygulama ağacı içerir.',
               '`skills/` ve `cli/skills/` proje bilgisi ve uygulama referansı olarak kullanılan yapılandırılmış operasyonel ve ajan tabanlı rehber dosyalarını içerir.',
             ],
           },
@@ -481,11 +488,11 @@ Target platform and observability backends`,
         blocks: [
           {
             kind: 'code',
-            code: `sentinel-coming/
-|-- cli/                         # Sentinel CLI Python package
+            code: `cluesight/
+|-- cli/                         # ClueSight CLI Python package
 |-- observability-gateway/       # Read-only FastAPI gateway for telemetry backends
 |-- test-platform/               # Multi-service target app, load, chaos, and smoke scripts
-|-- charts/sentinel/             # Helm chart for Kubernetes observability stack
+|-- charts/                      # Helm chart assets for Kubernetes
 |-- for-download/                # Compose bundle and operational setup scripts
 |-- scripts/                     # MicroK8s/COS helper scripts and repo automation
 |-- skills/                      # COS/Juju/MicroK8s operational skill documents
@@ -496,7 +503,7 @@ Target platform and observability backends`,
           {
             kind: 'quote',
             body:
-              'Önemli not: `agentic/` bağımsız referans projeleri içerir. Ana Sentinel uygulaması `cli/`, `observability-gateway/`, `test-platform/`, `charts/`, `for-download/`, `scripts/`, `skills/` ve `documantations/` içindedir.',
+              'Önemli not: `agentic/` bağımsız referans projeleri içerir. Ana ClueSight uygulaması `cli/`, `observability-gateway/`, `test-platform/`, `charts/`, `for-download/`, `scripts/`, `skills/` ve `documantations/` içindedir.',
           },
         ],
       },
@@ -508,7 +515,7 @@ Target platform and observability backends`,
           {
             kind: 'text',
             body: [
-              '`cli/` ana kullanıcıya dönük pakettir. Kaynak kodu `cli/src/sentinel_cli/` altında yer alır.',
+              '`cli/` ana kullanıcıya dönük pakettir. Python kaynak kodu `cli/src/` altında yer alır.',
               'Ana alanlar:',
             ],
           },
@@ -549,7 +556,7 @@ Target platform and observability backends`,
           {
             kind: 'text',
             body: [
-              'Ağ geçidi, `SENTINEL_OBSERVABILITY_GATEWAY_TOKEN` yapılandırıldığında bearer-token koruması destekler. Arka uç hataları, sırları sızdırmayan yapılandırılmış bir model üzerinden döner.',
+              'Ağ geçidi, erişim anahtarı yapılandırıldığında bearer token ile kimlik doğrulamayı destekler. Arka uç hataları, sırları sızdırmayan yapılandırılmış bir model üzerinden döner.',
             ],
           },
           { kind: 'heading', text: 'test-platform/' },
@@ -572,11 +579,11 @@ Target platform and observability backends`,
               '`k8s/`: namespace, servisler, deployment/stateful kaynaklar, OpenTelemetry Collector yapılandırması ve network policy manifest’leri.',
             ],
           },
-          { kind: 'heading', text: 'charts/sentinel/' },
+          { kind: 'heading', text: 'charts/' },
           {
             kind: 'text',
             body: [
-              'Helm chart, mevcut bir Kubernetes kümesine Prometheus, Loki, Grafana, Tempo ve Sentinel ağ geçidini kurar. Chart, Prometheus Community ve Grafana Helm depolarındaki upstream bağımlılıkları kullanır ve servis adlarını CLI keşif koduyla hizalı tutar.',
+              'Helm chart, mevcut bir Kubernetes kümesine Prometheus, Loki, Grafana, Tempo ve ClueSight ağ geçidini kurar. Chart, Prometheus Community ve Grafana Helm depolarındaki upstream bağımlılıkları kullanır ve servis adlarını CLI keşif koduyla hizalı tutar.',
             ],
           },
           { kind: 'heading', text: 'for-download/' },
@@ -597,41 +604,15 @@ Target platform and observability backends`,
         id: 'kurulum',
         title: 'Kurulum',
         blocks: [
-          { kind: 'text', body: ['Depoyu klonlayın ve sanal ortam oluşturun:'] },
+          { kind: 'text', body: ['Proje kökünde bir Python sanal ortamı oluşturun. Geliştirme kurulumu için CLI ve ağ geçidi paketlerini kendi dizinlerinden yükleyin.'] },
           {
             kind: 'code',
-            code: `cd sentinel-coming
-python3 -m venv .venv
+            code: `python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install --upgrade pip`,
+python -m pip install -e "./cli[dev]"
+python -m pip install -e "./observability-gateway[dev]"`,
           },
-          { kind: 'text', body: ['CLI’ı yerel geliştirme için kurun:'] },
-          {
-            kind: 'code',
-            code: `cd cli
-python -m pip install -e ".[dev]"
-python -m sentinel_cli --help`,
-          },
-          { kind: 'text', body: ['CLI’ı isteğe bağlı MCP desteğiyle kurun:'] },
-          {
-            kind: 'code',
-            code: `cd cli
-python -m pip install -e ".[dev,mcp]"
-python -m sentinel_cli doctor --profile local`,
-          },
-          { kind: 'text', body: ['Gözlemlenebilirlik ağ geçidini yerelde kurun ve çalıştırın:'] },
-          {
-            kind: 'code',
-            code: `cd observability-gateway
-python -m pip install -e ".[dev]"
-sentinel-observability-gateway`,
-          },
-          { kind: 'text', body: ['Alternatif ağ geçidi başlatma:'] },
-          {
-            kind: 'code',
-            code: `cd observability-gateway
-uvicorn observability_gateway.main:app --host 0.0.0.0 --port 8091`,
-          },
+          { kind: 'text', body: ['MCP istemcisiyle çalışmak için CLI paketinin isteğe bağlı MCP bağımlılıklarını kurabilirsiniz.'] },
         ],
       },
       {
@@ -640,88 +621,9 @@ uvicorn observability_gateway.main:app --host 0.0.0.0 --port 8091`,
         blocks: [
           {
             kind: 'text',
-            body: ['CLI, commit edilen şablonları yerel sırlardan ayrı tutar:'],
-          },
-          {
-            kind: 'list',
-            items: [
-              '`cli/config/sentinel.example.yaml`: commit edilen YAML şablonu.',
-              '`cli/.env.example`: commit edilen ortam şablonu.',
-              '`cli/config/sentinel.yaml`: yerel çalışma zamanı yapılandırması, Git tarafından yok sayılır.',
-              '`cli/.env`: yerel sırlar ve geçersiz kılmalar, Git tarafından yok sayılır.',
-            ],
-          },
-          { kind: 'text', body: ['Yerel yapılandırma oluşturma:'] },
-          {
-            kind: 'code',
-            code: `cd cli
-cp config/sentinel.example.yaml config/sentinel.yaml
-cp .env.example .env`,
-          },
-          {
-            kind: 'text',
-            body: ['`cli/.env.example` içindeki yaygın CLI ortam değişkenleri:'],
-          },
-          {
-            kind: 'list',
-            items: [
-              '`SENTINEL_CONFIG`',
-              '`SENTINEL_PROFILE`',
-              '`SENTINEL_MODEL`',
-              '`SENTINEL_OPENAI_BASE_URL`',
-              '`SENTINEL_API_KEY`',
-              '`SENTINEL_LOCAL_BASE_URL`',
-              '`SENTINEL_LOCAL_MODEL`',
-              '`ANTHROPIC_API_KEY`',
-              '`SENTINEL_ANTHROPIC_MODEL`',
-              '`SENTINEL_HTTP_CONNECT_TIMEOUT_SEC`',
-              '`SENTINEL_HTTP_TIMEOUT_SEC`',
-              '`SENTINEL_CONTEXT_WINDOW_TOKENS`',
-              '`SENTINEL_LOG_LEVEL`',
-              '`SENTINEL_MAX_TURNS`',
-              '`SENTINEL_AUTO_APPROVE`',
-              '`SENTINEL_SESSION_DIR`',
-              '`SENTINEL_TRAJECTORY_DIR`',
-              '`SENTINEL_EXPERIMENTAL_MCP`',
-            ],
-          },
-          {
-            kind: 'text',
             body: [
-              'Ağ geçidiyle ilgili CLI ayarları `sentinel.yaml` içindeki `observability_gateway` altında yapılandırılır:',
-            ],
-          },
-          {
-            kind: 'code',
-            code: `observability_gateway:
-  enabled: true
-  base_url: http://127.0.0.1:8091
-  timeout_sec: 10
-  token_env: SENTINEL_OBSERVABILITY_GATEWAY_TOKEN`,
-          },
-          {
-            kind: 'text',
-            body: [
-              '`observability-gateway/README.md` içinde belgelenen ağ geçidi servisi ortam değişkenleri:',
-            ],
-          },
-          {
-            kind: 'list',
-            items: [
-              '`SENTINEL_OBSERVABILITY_CONFIG_PATH`',
-              '`SENTINEL_OBSERVABILITY_GATEWAY_TOKEN`',
-              '`SENTINEL_OBSERVABILITY_PROMETHEUS__BASE_URL`',
-              '`SENTINEL_OBSERVABILITY_PROMETHEUS__TOKEN_ENV`',
-              '`SENTINEL_OBSERVABILITY_LOKI__BASE_URL`',
-              '`SENTINEL_OBSERVABILITY_TEMPO__BASE_URL`',
-              '`SENTINEL_OBSERVABILITY_HTTP__TIMEOUT_SEC`',
-              '`SENTINEL_OBSERVABILITY_HTTP__RETRY__MAX_ATTEMPTS`',
-            ],
-          },
-          {
-            kind: 'text',
-            body: [
-              '`for-download/compose/.env.example` içindeki compose paketi ayrıca Prometheus, Loki, Tempo, Grafana ve Sentinel ağ geçidi için portları tanımlar.',
+              'CLI yapılandırma şablonları model sağlayıcısı, çalışma profili, zaman aşımları, oturum kaydı ve araç onaylarını tanımlar. Yerel erişim anahtarları ortam değişkenlerinde tutulur.',
+              'Ağ geçidi bağlantısı için `observability_gateway` bölümünde adres, istek zaman aşımı ve token’ın okunacağı ortam değişkeni ayarlanır. Prometheus, Loki, Tempo ve Grafana’nın bağlantı ayarları dağıtım ortamında belirlenir.',
             ],
           },
         ],
@@ -730,40 +632,14 @@ cp .env.example .env`,
         id: 'kullanim',
         title: 'Kullanım',
         blocks: [
-          { kind: 'text', body: ['Tek seferlik bir ajan istemi çalıştırma:'] },
           {
-            kind: 'code',
-            code: `cd cli
-source .venv/bin/activate
-python -m sentinel_cli run "Summarize the current observability gateway status"`,
-          },
-          { kind: 'text', body: ['Etkileşimli REPL başlatma:'] },
-          {
-            kind: 'code',
-            code: `cd cli
-source .venv/bin/activate
-python -m sentinel_cli repl`,
-          },
-          { kind: 'text', body: ['Etkin yapılandırmayı inceleme:'] },
-          { kind: 'code', code: `cd cli\npython -m sentinel_cli config` },
-          { kind: 'text', body: ['Tanılama çalıştırma:'] },
-          { kind: 'code', code: `cd cli\npython -m sentinel_cli doctor --profile local` },
-          { kind: 'text', body: ['Ağ geçidi üzerinden telemetri sorgulama:'] },
-          {
-            kind: 'code',
-            code: `cd cli
-python -m sentinel_cli obs metric 'up'
-python -m sentinel_cli obs logs --service gateway
-python -m sentinel_cli obs traces --service orders`,
-          },
-          { kind: 'text', body: ['Compose kurulum akışını çalıştırma:'] },
-          { kind: 'code', code: `cd cli\npython -m sentinel_cli install --mode compose` },
-          { kind: 'text', body: ['Kubernetes Helm kurulum akışını çalıştırma:'] },
-          { kind: 'code', code: `cd cli\npython -m sentinel_cli install --mode k8s` },
-          {
-            kind: 'text',
-            body: [
-              'COS kurulum arka ucu şu anda keşif/yapılandırma bağlantılarını içerir; preflight, install ve verify adımları kodda TODO olarak işaretlidir. Mevcut MicroK8s/Juju/COS operasyonel yolu için `scripts/` ve `for-download/` altındaki script’leri kullanın.',
+            kind: 'list',
+            items: [
+              'Tek seferlik bir istem için `run`, etkileşimli bir oturum için `repl` kullanılır.',
+              '`config` etkin ayarları gösterir. `doctor` bağlantıları ve yerel profili doğrular.',
+              '`obs metric`, `obs logs` ve `obs traces` ağ geçidi üzerinden telemetriyi sorgular.',
+              '`install` komutu Docker Compose ve Helm tabanlı Kubernetes kurulumlarını destekler.',
+              'COS arka ucu keşif ve yapılandırma bağlantılarını içerir. MicroK8s/Juju/COS kurulum yardımcıları `scripts/` ve `for-download/` altında bulunur.',
             ],
           },
         ],
@@ -777,14 +653,14 @@ python -m sentinel_cli obs traces --service orders`,
           {
             kind: 'text',
             body: [
-              '`test-platform/README.md` yerel veritabanı ortam değişkenlerini ve health check’leri belgeler:',
+              '`test-platform/README.md` yerel veritabanı ortam değişkenlerini ve health check’leri belgeler. Aşağıdaki bağlantı adreslerinde kullanıcı adı ve parolayı test ortamınıza göre doldurun:',
             ],
           },
           {
             kind: 'code',
-            code: `export ORDERS_DB_URL=postgresql+asyncpg://sentinel:sentinel@localhost:5432/orders_db
-export PAYMENTS_DB_URL=postgresql+asyncpg://sentinel:sentinel@localhost:5432/payments_db
-export INVENTORY_DB_URL=postgresql+asyncpg://sentinel:sentinel@localhost:5432/inventory_db
+            code: `export ORDERS_DB_URL='postgresql+asyncpg://<user>:<password>@localhost:5432/orders_db'
+export PAYMENTS_DB_URL='postgresql+asyncpg://<user>:<password>@localhost:5432/payments_db'
+export INVENTORY_DB_URL='postgresql+asyncpg://<user>:<password>@localhost:5432/inventory_db'
 export PAYMENTS_REDIS_URL=redis://localhost:6379/1
 python scripts/seed_db.py
 curl http://localhost:8080/health
@@ -838,20 +714,11 @@ curl http://localhost:8083/health`,
         id: 'dagitim-secenekleri',
         title: 'Dağıtım seçenekleri',
         blocks: [
-          { kind: 'text', body: ['Ağ geçidi için Docker imajı:'] },
-          { kind: 'code', code: 'docker pull ghcr.io/caglarkc/sentinel-gateway:latest' },
-          { kind: 'text', body: ['Helm chart:'] },
           {
-            kind: 'code',
-            code: `helm dependency update ./charts/sentinel
-helm upgrade --install sentinel ./charts/sentinel \\
-  --create-namespace -n sentinel \\
-  --set gateway.token=<token>`,
-          },
-          {
-            kind: 'text',
-            body: [
-              'Yerel/laboratuvar Compose yığını varlıkları `for-download/compose/` altında bulunur ve CLI kurulum varlıklarına paketlenir.',
+            kind: 'list',
+            items: [
+              'Yerel test ortamı için Docker Compose varlıkları `for-download/compose/` altında bulunur ve CLI kurulum paketine dâhildir.',
+              'Kubernetes için Helm dağıtımı gözlemlenebilirlik bileşenlerini ve ağ geçidini mevcut kümeye kurar. Ağ geçidi token’ı dağıtım sırasında yapılandırılabilir.',
             ],
           },
         ],
@@ -864,13 +731,13 @@ helm upgrade --install sentinel ./charts/sentinel \\
             kind: 'list',
             items: [
               'Gözlemlenebilirlik ağ geçidi bilinçli olarak salt-okunurdur; alarm yönetimi, dashboard yönetimi, arka uç yazma işlemleri veya Grafana datasource proxy’si uygulamaz.',
-              '`SENTINEL_OBSERVABILITY_GATEWAY_TOKEN` yapılandırıldığında ağ geçidi bearer kimlik doğrulaması etkinleşir.',
+              'Ağ geçidi erişim anahtarı yapılandırıldığında bearer token ile kimlik doğrulama etkinleşir.',
               'Ağ geçidi arka uç hataları, yeniden denenebilirlik meta verisi ve sır sızdırmayan mesajlar içeren yapılandırılmış bir yanıt modeli kullanır.',
               'CLI yapılandırma şablonları sırları commit edilen yapılandırma dosyalarında değil ortam değişkenlerinde tutar.',
-              '`.gitignore`; `.env`, yerel Sentinel oturumları, kimlik bilgileri, anahtar materyali, derleme çıktıları, önbellekler, loglar ve yerel çalıştırma çıktılarını hariç tutar.',
+              '`.gitignore`; `.env`, yerel ClueSight oturumları, kimlik bilgileri, anahtar materyali, derleme çıktıları, önbellekler, loglar ve yerel çalıştırma çıktılarını hariç tutar.',
               'CLI araçları onay modları, shell ve dosya yazma zaman aşımları, çıktı limitleri, isteğe bağlı salt-okunur bash davranışı ve isteğe bağlı bellek yazma hapsi içerir.',
               'Bellek yazmaları, kalıcılaştırılmadan önce yaygın sır desenleri için redaksiyon mantığından geçer.',
-              'Ağ geçidi Dockerfile’ı servisi root olmayan `sentinel` kullanıcısı olarak çalıştırır.',
+              'Ağ geçidi Dockerfile’ı servisi root yetkisi olmayan bir kullanıcı olarak çalıştırır.',
               'Helm chart root olmayan pod güvenlik bağlamı ayarlar, ayrıcalık yükseltmeyi devre dışı bırakır, Linux yeteneklerini düşürür ve ağ geçidi konteyneri için salt-okunur kök dosya sistemi kullanır.',
             ],
           },
@@ -886,8 +753,7 @@ helm upgrade --install sentinel ./charts/sentinel \\
               'Proje, CLI paket meta verisinde Pre-Alpha olarak işaretlidir.',
               'COS kurulum arka ucu henüz tam bir kurulumcu değildir; kod preflight, install ve verify adımlarını TODO olarak işaretler.',
               'TLS sonlandırma, süreç denetimi ve sır rotasyonu gibi üretim sıkılaştırması, mevcut ağ geçidi README kapsamının dışında belgelenmiştir.',
-              'README hazırlığı sırasında ana Sentinel proje ağacında ekran görüntüsü veya UI varlığı bulunamamıştır.',
-              '`agentic/` harici/referans projeler içerir ve teslim edilen Sentinel ürünü olarak sunulmamalıdır.',
+              '`agentic/` harici/referans projeler içerir ve teslim edilen ClueSight ürünü olarak sunulmamalıdır.',
             ],
           },
         ],
@@ -1675,7 +1541,7 @@ export const projects: Project[] = [
   evKarnesi,
   projectArchive.find((project) => project.slug === 'demandrift')!,
   projectArchive.find((project) => project.slug === 'steward')!,
-  projectArchive.find((project) => project.slug === 'sentinel-coming')!,
+  projectArchive.find((project) => project.slug === 'cluesight')!,
   firstStep,
 ];
 
