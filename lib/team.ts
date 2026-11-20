@@ -97,6 +97,17 @@ export const team: TeamMember[] = [
     "photo": "batuhan-evleksiz.jpeg"
   },
   {
+    "name": "Doğa Doğruoğlu",
+    "initials": "DD",
+    "role": "UI/UX Developer",
+    "company": "ACK Techs",
+    "bio": "ODTÜ Endüstriyel Tasarım mezunu. ACK Techs’te kullanıcı ihtiyaçlarını anlaşılır ürün akışlarına ve arayüzlere dönüştürüyor. Figma’da tasarımlarını prototipleyerek fikirlerin geliştirme öncesinde denenmesine katkı sağlıyor.",
+    "tags": ["UI/UX", "Figma", "Prototyping", "User Research"],
+    "color": "#ffd1b8",
+    "linkedin": "https://www.linkedin.com/in/doga-dogruoglu/",
+    "photo": "doga-dogruoglu.jpeg"
+  },
+  {
     "name": "Doğukan Taha Tıraş",
     "initials": "DT",
     "role": "Frontend Lead",
