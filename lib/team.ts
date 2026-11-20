@@ -105,7 +105,7 @@ export const team: TeamMember[] = [
     "tags": ["UI/UX", "Figma", "Prototyping", "User Research"],
     "color": "#ffd1b8",
     "linkedin": "https://www.linkedin.com/in/doga-dogruoglu/",
-    "photo": "doga-dogruoglu.jpeg"
+    "photo": "doga-dogruoglu-clean.png"
   },
   {
     "name": "Doğukan Taha Tıraş",
